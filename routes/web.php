@@ -5,7 +5,14 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('welcome');
-})->name('home');;
+})->name('home');
+
+
+Route::get('/bibles', function () {
+    return Inertia::render('Bibles'); // The name must match the file `Bible.tsx`
+});
+
+
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
