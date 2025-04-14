@@ -17,11 +17,11 @@ class ApiBibleService
     }
 
     // Fetch all available Bibles
-    public function getBibles()
+    public function getBibles($name)
     {
         $response = Http::withHeaders([
             'api-key' => $this->apiKey,
-        ])->get("{$this->baseUrl}/bibles");
+        ])->get("{$this->baseUrl}/bibles?name={$name}");
 
         if ($response->failed()) {
             // Handle error

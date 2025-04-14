@@ -14,10 +14,13 @@ class BibleApiController extends Controller
         $this->bibleService = $bibleService;
     }
 
-    public function getBibles()
+    public function getBibles(Request $request)
     {
         try {
-            $bibles = $this->bibleService->getBibles();
+            // Retrieve the 'name' query parameter from the request
+            $name = $request->query('name');
+
+            $bibles = $this->bibleService->getBibles($name);
 
             return response()->json([
                 'success' => true,

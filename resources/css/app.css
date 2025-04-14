@@ -157,3 +157,24 @@
         @apply bg-background text-foreground;
     }
 }
+
+/* Use this if you want to create custom rounded scrollbars */
+.scrollbar-rounded {
+    scrollbar-width: thin;
+    scrollbar-color: #6b7280 #d1d5db; /* Thumb, Track colors */
+}
+
+.scrollbar-rounded::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.scrollbar-rounded::-webkit-scrollbar-thumb {
+    background-color: #6b7280; /* Gray-500 */
+    border-radius: 9999px; /* Full rounded */
+}
+
+.scrollbar-rounded::-webkit-scrollbar-track {
+    background: #d1d5db; /* Gray-300 */
+    border-radius: 9999px; /* Full rounded */
+}
